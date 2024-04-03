@@ -1,19 +1,18 @@
-import { useState } from "react";
+import { RouterProvider, createRouter } from "@tanstack/react-router";
+import { routeTree } from "./routeTree.gen";
 
-import "./App.css";
-import { Button } from "@/components/ui/button";
+// Create a new router instance
+const router = createRouter({ routeTree });
+
+// Register the router instance for type safety
+declare module "@tanstack/react-router" {
+  interface Register {
+    router: typeof router;
+  }
+}
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  return (
-    <>
-      <div>
-        <Button onClick={() => setCount((prev) => prev + 1)}>Hello Vite</Button>
-        <h1 className="text-2xl text-gray-600 mt-6">Count is: {count}</h1>
-      </div>
-    </>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
