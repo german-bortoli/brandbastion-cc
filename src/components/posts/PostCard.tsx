@@ -22,6 +22,7 @@ const PostCard: FC<Props> = ({ post }) => (
         <Link
           data-e2e-id="post-navigation-link"
           className="text-blue-500"
+          activeProps={{ className: "font-bold text-green-600" }}
           to={Route.to}
           params={{ postId: String(post.id) }}
         >
