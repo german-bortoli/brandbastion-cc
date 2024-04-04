@@ -34,18 +34,23 @@ const Posts = () => {
 
   const filteredPosts = posts.filter((post) => {
     const filterKey = deferredSearch.toLowerCase();
+
+    // Find by title
     const foundByTitle = post.title.toLowerCase().includes(filterKey);
     if (foundByTitle) {
       return true;
     }
 
+    // Find by body
     const foundByBody = post.body.toLowerCase().includes(filterKey);
     if (foundByBody) {
       return true;
     }
 
+    // Find by author
     const user = users[post.userId];
-    const foundByAuthor = user.name.toLowerCase().includes(filterKey);
+
+    const foundByAuthor = user?.name?.toLowerCase().includes(filterKey);
     if (foundByAuthor) {
       return true;
     }
