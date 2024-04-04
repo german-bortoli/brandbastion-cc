@@ -96,6 +96,7 @@ const Posts = () => {
           <Input
             type="search"
             value={search}
+            data-testid="search-input"
             onChange={(evt) => setSearch(evt.target.value)}
             className="bg-lime-50"
             placeholder="Search ..."
