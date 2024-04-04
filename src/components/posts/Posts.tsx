@@ -13,11 +13,13 @@ import { Post } from "@/types/app";
 
 import PostCard from "@/components/posts/PostCard";
 import SkeletonCard from "@/components/SkeletonCard";
+import { selectUsers } from "@/reducers/userReducer";
 
 const Posts = () => {
   const dispatch = useAppDispatch();
 
   const posts = useAppSelector(selectPosts);
+  const users = useAppSelector(selectUsers);
   const hasError = useAppSelector(selectPostsHasError);
   const isLoading = useAppSelector(selectPostsIsLoading);
 
@@ -56,7 +58,7 @@ const Posts = () => {
       <h1>Posts</h1>
       <ul>
         {posts.map((post: Post) => (
-          <PostCard post={post} key={post.id} />
+          <PostCard post={post} user={users[post.userId]} key={post.id} />
         ))}
       </ul>
     </div>

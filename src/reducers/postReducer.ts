@@ -7,13 +7,13 @@ import { RootState } from "@/store";
 import { Posts } from "@/types/app";
 /**
  * Ideally this file should be into a folder structure like:
- *  - features/posts/postSlice.ts
- *  - features/posts/postActions.ts
+ *  - features/post/postReducer.ts
+ *  - features/post/postActions.ts
  *
  * But for this basic example I simplified a bit the structure
  */
 
-export const fetchPosts = createAsyncThunk("posts/fetchPosts", async () => {
+export const fetchPosts = createAsyncThunk("post/fetchPosts", async () => {
   return getPosts();
 });
 
@@ -30,7 +30,7 @@ const initialState = {
 } satisfies PostSliceState as PostSliceState;
 
 export const postSlice = createSlice({
-  name: "posts",
+  name: "post",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
@@ -54,8 +54,8 @@ export const postSlice = createSlice({
   },
 });
 
-export const selectPosts = (state: RootState) => state.posts.posts;
-export const selectPostsIsLoading = (state: RootState) => state.posts.isLoading;
-export const selectPostsHasError = (state: RootState) => state.posts.hasError;
+export const selectPosts = (state: RootState) => state.post.posts;
+export const selectPostsIsLoading = (state: RootState) => state.post.isLoading;
+export const selectPostsHasError = (state: RootState) => state.post.hasError;
 
 export default postSlice.reducer;
