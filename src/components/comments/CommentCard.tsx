@@ -99,7 +99,10 @@ const CommentCard: FC<Props> = ({ comment }) => {
       </div>
       <div data-e2e-id="comment-reply" className="ml-20 mb-3">
         {replies.map((reply, idx) => (
-          <div key={idx} className="bg-lime-100 p-3 rounded-lg max-w-80 mt-3">
+          <div
+            key={idx}
+            className="bg-lime-100 p-3 rounded-lg max-w-[375px] mt-3"
+          >
             <b>Me: </b> <span>{reply}</span>
           </div>
         ))}
