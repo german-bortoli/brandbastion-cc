@@ -1,5 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 
+import Comments from "@/components/comments/Comments";
+
 export const Route = createFileRoute("/_index/post/$postId")({
   component: PostComponent,
 });
@@ -7,5 +9,5 @@ export const Route = createFileRoute("/_index/post/$postId")({
 function PostComponent() {
   const { postId } = Route.useParams();
 
-  return <div>Fetching post comments from postID: {postId}</div>;
+  return <Comments postId={Number(postId)} />;
 }

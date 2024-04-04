@@ -23,7 +23,7 @@ function IndexLayout() {
       <div className="basis-1/2">
         {users && Object.values(users).length > 0 && <Posts />}
       </div>
-      <div className="basis-1/2 bg-lime-300">
+      <div className="basis-1/2 shadow-xl	">
         <Outlet />
       </div>
     </div>
