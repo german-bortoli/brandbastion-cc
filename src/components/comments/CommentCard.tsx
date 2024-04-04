@@ -2,7 +2,7 @@ import { FC, useState } from "react";
 import CreatableSelect from "react-select/creatable";
 import { MoreVertical } from "lucide-react";
 
-import { Comment, Tags } from "@/types/app";
+import { Comment } from "@/types/app";
 import {
   DropdownMenu,
   DropdownMenuContent,
