@@ -1,8 +1,10 @@
-import { RootState } from "@/store";
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
+import { getPosts } from "@/services/apiService";
+import { RootState } from "@/store";
+import { Posts } from "@/types/app";
 /**
  * Ideally this file should be into a folder structure like:
  *  - features/posts/postSlice.ts
@@ -12,13 +14,11 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
  */
 
 export const fetchPosts = createAsyncThunk("posts/fetchPosts", async () => {
-  // const response = await postApi.fetchPosts(userId);
-  const response = { data: ["AAAAA", "BBBB"] };
-  return response.data;
+  return getPosts();
 });
 
 interface PostSliceState {
-  posts: string[];
+  posts: Posts;
   isLoading: boolean;
   hasError: boolean;
 }
@@ -45,7 +45,7 @@ export const postSlice = createSlice({
     });
     builder.addCase(
       fetchPosts.fulfilled,
-      (state, action: PayloadAction<string[]>) => {
+      (state, action: PayloadAction<Posts>) => {
         state.posts = action.payload;
         state.isLoading = false;
         state.hasError = false;
