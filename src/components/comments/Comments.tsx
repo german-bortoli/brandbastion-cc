@@ -26,7 +26,6 @@ const Comments: FC<Props> = ({ postId }) => {
           <CommentCard key={comment.id} comment={comment} />
         ))}
       </div>
-      {/** @TODO: Add comment/reply box **/}
     </div>
   );
 };
