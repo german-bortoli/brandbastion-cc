@@ -47,7 +47,10 @@ const CommentCard: FC<Props> = ({ comment }) => {
 
   return (
     <>
-      <div className="flex items-start gap-2.5 mb-3 mr-6">
+      <div
+        className="flex items-start gap-2.5 mb-3 mr-6"
+        data-testid={`comment-card-${comment.id}`}
+      >
         <img
           className="w-8 h-8 rounded-full"
           src={`https://i.pravatar.cc/50??u=${displayName}`}
@@ -75,7 +78,7 @@ const CommentCard: FC<Props> = ({ comment }) => {
           </span>
         </div>
         <DropdownMenu>
-          <DropdownMenuTrigger>
+          <DropdownMenuTrigger data-testid="comment-more-actions">
             <MoreVertical className="w-4 h-4" />
           </DropdownMenuTrigger>
           <DropdownMenuContent>
@@ -97,7 +100,7 @@ const CommentCard: FC<Props> = ({ comment }) => {
           </DialogContent>
         </Dialog>
       </div>
-      <div data-e2e-id="comment-reply" className="ml-20 mb-3">
+      <div data-testid="comment-reply" className="ml-20 mb-3">
         {replies.map((reply, idx) => (
           <div
             key={idx}

@@ -61,7 +61,7 @@ const Posts = () => {
   if (isLoading) {
     return (
       <div
-        data-e2e-id="posts-loading-content"
+        data-testid="posts-loading-content"
         className="px-3 mt-3 overflow-y-auto h-screen"
       >
         <h1 className="mb-3">Loading Posts...</h1>
@@ -74,7 +74,7 @@ const Posts = () => {
 
   if (hasError) {
     return (
-      <div data-e2e-id="posts-error-content" className="text-red-500">
+      <div data-testid="posts-error-content" className="text-red-500">
         Some error happens while fetching posts
       </div>
     );
@@ -82,11 +82,11 @@ const Posts = () => {
 
   return (
     <div
-      data-e2e-id="posts-list-content"
+      data-testid="posts-list-content"
       className="px-3 overflow-y-auto h-screen"
     >
       <div
-        data-e2e-id="post-topbar"
+        data-testid="post-topbar"
         className="h-14 bg-lime-100 rounded-lg mt-3 mb-3 px-6 border border-lime-400 w-full grid grid-cols-2 gap-3 sticky top-3 shadow-xl"
       >
         <div className="flex items-center justify-start">

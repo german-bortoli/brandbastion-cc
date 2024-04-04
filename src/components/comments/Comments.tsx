@@ -19,7 +19,7 @@ const Comments: FC<Props> = ({ postId }) => {
   }, [dispatch, postId]);
 
   return (
-    <div className="overflow-y-auto h-screen">
+    <div className="overflow-y-auto h-screen" data-testid="comments-container">
       {/** @TODO: Add breadcrumb **/}
       <div className="mt-6 ml-6">
         {comments.map((comment: Comment) => (

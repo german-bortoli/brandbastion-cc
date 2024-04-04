@@ -18,11 +18,11 @@ interface Props {
 
 const PostCard: FC<Props> = ({ post, user }) => {
   return (
-    <Card className="mb-6" data-e2e-id={`post-card-id-${post.id}`}>
+    <Card className="mb-6" data-testid={`post-card-id-${post.id}`}>
       <CardHeader>
         <CardTitle>
           <Link
-            data-e2e-id="post-navigation-link"
+            data-testid="post-navigation-link"
             className="text-blue-500"
             activeProps={{ className: "font-bold text-green-600" }}
             to={PostRoute.to}
@@ -31,11 +31,11 @@ const PostCard: FC<Props> = ({ post, user }) => {
             {post.title}
           </Link>
         </CardTitle>
-        <CardDescription data-e2e-id="post-card-author">
+        <CardDescription data-testid="post-card-author">
           By: {user?.name || "Anonymous"}
         </CardDescription>
       </CardHeader>
-      <CardContent data-e2e-id="post-card-content">
+      <CardContent data-testid="post-card-content">
         <p>{post.body}</p>
       </CardContent>
     </Card>
