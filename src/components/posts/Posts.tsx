@@ -28,7 +28,10 @@ const Posts = () => {
 
   if (isLoading) {
     return (
-      <div className="px-3 mt-3 overflow-y-auto h-screen">
+      <div
+        data-e2e-id="posts-loading-content"
+        className="px-3 mt-3 overflow-y-auto h-screen"
+      >
         <h1 className="mb-3">Loading Posts...</h1>
         {[1, 2, 3].map((id) => (
           <SkeletonCard key={id} />
@@ -39,14 +42,17 @@ const Posts = () => {
 
   if (hasError) {
     return (
-      <div className="text-red-500">
+      <div data-e2e-id="posts-error-content" className="text-red-500">
         Some error happens while fetching posts
       </div>
     );
   }
 
   return (
-    <div className="px-3 overflow-y-auto h-screen">
+    <div
+      data-e2e-id="posts-list-content"
+      className="px-3 overflow-y-auto h-screen"
+    >
       <h1>Posts</h1>
       <ul>
         {posts.map((post: Post) => (

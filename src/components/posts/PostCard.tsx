@@ -16,10 +16,11 @@ interface Props {
 }
 
 const PostCard: FC<Props> = ({ post }) => (
-  <Card className="mb-6">
+  <Card className="mb-6" data-e2e-id={`post-card-id-${post.id}`}>
     <CardHeader>
       <CardTitle>
         <Link
+          data-e2e-id="post-navigation-link"
           className="text-blue-500"
           to={Route.to}
           params={{ postId: String(post.id) }}
