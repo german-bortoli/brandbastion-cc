@@ -2,7 +2,7 @@
 
 ## Description
 
-Used Vite+Typescript+React to create the code challenge. The goal is to build a simple form with validation and submit action (no backend).
+Used Vite+Typescript+React to create the code challenge repository
 
 UI Framework: ShadCDN-UI
 
