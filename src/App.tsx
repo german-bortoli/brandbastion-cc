@@ -1,5 +1,8 @@
 import { RouterProvider, createRouter } from "@tanstack/react-router";
 import { Provider } from "react-redux";
+
+import { TooltipProvider } from "@/components/ui/tooltip";
+
 import { routeTree } from "./routeTree.gen";
 import { store } from "@/store";
 
@@ -16,7 +19,9 @@ declare module "@tanstack/react-router" {
 function App() {
   return (
     <Provider store={store}>
-      <RouterProvider router={router} />
+      <TooltipProvider>
+        <RouterProvider router={router} />
+      </TooltipProvider>
     </Provider>
   );
 }
