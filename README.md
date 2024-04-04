@@ -6,7 +6,7 @@ Used Vite+Typescript+React to create the code challenge. The goal is to build a 
 
 UI Framework: ShadCDN-UI
 
-- Preview page: https://brandbastion-cc-chk5.vercel.app
+- Preview page: https://brandbastion-cc.vercel.app/
 - Kanban Board (with estimations and times): https://github.com/users/german-bortoli/projects/3
 
 ## Installation
