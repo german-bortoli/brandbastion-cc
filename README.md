@@ -30,3 +30,14 @@ yarn install
 ```bash
 yarn dev
 ```
+
+## Testing
+
+Regarding testing I had to use `.jsx` for now because I was having an issue with tanstack router, it was throwing some errors on build because some typesafe.
+
+Unit tests runs automatically by a GitHub action, but if you want to run them manually you can use the command below:
+
+```bash
+yarn test
+```
+
