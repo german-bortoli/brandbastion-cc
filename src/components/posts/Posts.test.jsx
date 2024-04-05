@@ -39,7 +39,7 @@ const renderPostsList = () => {
   );
 };
 describe("Posts test", () => {
-  it("should render Posts list", async () => {
+  it("Posts: should render Posts list", async () => {
     setupHTTPMocks();
     const { getByTestId } = renderPostsList();
 
@@ -49,7 +49,7 @@ describe("Posts test", () => {
     expect(container).toBeTruthy();
   });
 
-  it("Show error when API is not throwing an error or exception on Posts", async () => {
+  it("Posts: should render error when api fails", async () => {
     const mockApi = setupHTTPMocks();
     mockApi.onGet("/posts").reply(400);
 
@@ -60,7 +60,7 @@ describe("Posts test", () => {
     expect(container).toBeTruthy();
   });
 
-  it("Filter Posts by title", async () => {
+  it("Posts: should filter by title when user types on search input", async () => {
     setupHTTPMocks();
     const { getByTestId } = renderPostsList();
 
@@ -71,9 +71,11 @@ describe("Posts test", () => {
 
     fireEvent.change(searchInput, { target: { value: "Title 1" } });
 
+    // Post should be present into the page
     const post1 = screen.queryByText("Title 1");
     expect(post1).toBeTruthy();
 
+    // This post should not exists
     const post2 = screen.queryByText("Another Blog Post");
     expect(post2).toBeNull();
   });

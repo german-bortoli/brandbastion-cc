@@ -28,7 +28,7 @@ const renderCommentsList = (props) =>
   );
 
 describe("Comment test", () => {
-  it("should render Comments list", async () => {
+  it("Comments: should render comments list", async () => {
     setupHTTPMocks();
     const { getByTestId } = renderCommentsList({});
 
